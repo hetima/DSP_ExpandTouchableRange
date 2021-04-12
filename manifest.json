@@ -1,0 +1,7 @@
+{
+    "name": "ExpandTouchableRange",
+    "description": "Expand Interactable range to open storage and other building info by click. ストレージを開いたり建物の情報を見たりできる距離を延ばします。",
+    "version_number": "1.0.0",
+    "dependencies": [],
+    "website_url": "https://github.com/hetima/DSP_ExpandTouchableRange"
+}
