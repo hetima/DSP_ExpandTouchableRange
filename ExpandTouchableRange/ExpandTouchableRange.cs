@@ -20,9 +20,14 @@ namespace ExpandTouchableRange
 
         void Awake()
         {
-            touchableRangeMultiplier = Config.Bind<int>("General", "touchable_range_multiplier", 250, "multiplier percentage. min=20 max=500. original behavior is 100");
-            touchableRangeMultiplier.Value = Math.Min(Math.Max(touchableRangeMultiplier.Value, 20), 500);
+            touchableRangeMultiplier = Config.Bind("General", "touchable_range_multiplier", 250,
+                new ConfigDescription("multiplier percentage. min=100(%) max=999(%). original behavior is 100", new AcceptableValueRange<int>(100, 999)));
+
+            touchableRangeMultiplier.Value = Math.Min(Math.Max(touchableRangeMultiplier.Value, 100), 999);
             multiply = (float)touchableRangeMultiplier.Value / 100f;
+            touchableRangeMultiplier.SettingChanged += (sender, args) => {
+                multiply = Math.Min(Math.Max(touchableRangeMultiplier.Value, 100), 999) / 100f;
+            };
 
             new Harmony(__GUID__).PatchAll(typeof(GetObjectSelectDistance_Patch));
         }
