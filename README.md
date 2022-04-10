@@ -1,10 +1,9 @@
 # ExpandTouchableRange 
 
-Mod for Dyson Sphere Program.
+Mod for Dyson Sphere Program. Needs BepInEx.
 
 Expand interactable range to open storage and other building info by click.  
 
-ストレージを開いたり建物の情報を見たりできる距離を広げます。デフォルトで2.5倍になります。設定ファイルで変更できます。  
 
 
 ## Config
@@ -13,9 +12,15 @@ config file name is `com.hetima.dsp.ExpandTouchableRange.cfg`.
 
 ### `touchable_range_multiplier`  
 
-multiplier percentage. min=20(%) max=500(%). original behavior is 100. default value is 250.
+multiplier percentage. min=100(%) max=999(%). original behavior is 100. default value is 250.
+
 
 ## Release Notes
+
+### v1.0.1
+
+- Configuration changes are now applied immediately
+- Maximum value increased to 999
 
 ### v1.0.0
 
