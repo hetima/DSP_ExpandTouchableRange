@@ -60,4 +60,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>COPY $(TargetPath) "G:\SteamLibrary\steamapps\common\Dyson Sphere Program\BepInEx\plugins"</PostBuildEvent>
+  </PropertyGroup>
 </Project>
